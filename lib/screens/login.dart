@@ -2,8 +2,10 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter0/screens/signup.dart';
 import 'package:flutter0/utils/constainst.dart';
 import 'package:flutter0/widgets/rep_textfiled.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -15,12 +17,21 @@ class LoginScreen extends StatelessWidget {
     return GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         child: Scaffold(
+          //--------------fleche de retour au dessus-----------------
+          /*appBar:PreferredSize(child: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: IconButton(onPressed: () =>Get.offAll(SignUpScreen()),icon: Icon(Icons.arrow_back_ios),
+            color: Colors.black,),
+          ),preferredSize: Size.fromHeight(45),
+          ),*/
+
           body: Container(
             margin: EdgeInsets.all(15), //espaces
             width: gWidth,
             height: gHeigh,
             child: Column(
-              children:const [
+              children: const [
                 TopImage(),
                 LoginText(),
                 SizedBox(height: 20),
@@ -50,22 +61,27 @@ class RegisterText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInDown(
-        child: Container(
-            width: gWidth / 2,
-            height: gHeigh / 42,
-            child: FittedBox(
-              child: RichText(
-                text: TextSpan(
-                    text: "New to Logistics ?",
-                    style: TextStyle(color: text1Color),
-                    children: [
-                      TextSpan(
-                          text: "Register",
-                          style: TextStyle(
-                              color: buttonColor, fontWeight: FontWeight.w500))
-                    ]),
-              ),
-            )));
+        child: GestureDetector(
+      onTap: () {
+        Get.offAll(const SignUpScreen());
+      },
+      child: Container(
+          width: gWidth / 2,
+          height: gHeigh / 42,
+          child: FittedBox(
+            child: RichText(
+              text: TextSpan(
+                  text: "New to Logistics ?",
+                  style: TextStyle(color: text1Color),
+                  children: [
+                    TextSpan(
+                        text: "Register",
+                        style: TextStyle(
+                            color: buttonColor, fontWeight: FontWeight.w500))
+                  ]),
+            ),
+          )),
+    ));
   }
 }
 
@@ -166,7 +182,9 @@ class LoginButton extends StatelessWidget {
           width: gWidth,
           height: gHeigh / 15,
           child: (ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.offAll(const SignUpScreen());
+            },
             child: Text("Login"),
             style: ButtonStyle(
                 shape: MaterialStateProperty.all(RoundedRectangleBorder(

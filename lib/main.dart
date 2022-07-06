@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter0/screens/login.dart';
+import 'package:flutter0/screens/signup.dart';
 import 'package:get/get.dart';
 
 void main() {

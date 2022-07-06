@@ -30,24 +30,24 @@ class RepTextFiled extends StatelessWidget {
             color: iconColor,
             size: 30,
             ),
-            SizedBox(width: 10,),
+            const SizedBox(width: 10,),
             SizedBox(height: 50,
             width: gWidth/1.3,
             child: TextField(
-              readOnly: true,//sans faire sortir le clavier(erreur de marge)
+              readOnly: false,//sans faire sortir le clavier(erreur de marge)
               cursorColor: Colors.black,
-              style: TextStyle(color: Colors.black),
+              style:const TextStyle(color: Colors.black),
               showCursor: true,
               decoration: InputDecoration(
                 suffixIcon: suficon,
-                focusedBorder: UnderlineInputBorder(
+                focusedBorder:const UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.black)
                 ),
-                enabledBorder: UnderlineInputBorder(
+                enabledBorder: const  UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.grey,width: 2)
                 ),
                 labelText: text,
-                labelStyle: TextStyle(color: Colors.grey,fontSize: 15, fontWeight: FontWeight.w400)
+                labelStyle:const TextStyle(color: Colors.grey,fontSize: 15, fontWeight: FontWeight.w400)
               ),
             ),
             )
